@@ -1,0 +1,31 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: subha9938
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: email-app
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: banao-email-app
+
+provider:
+  name: aws
+  runtime: python3.8
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+  sendEmail:
+    handler: handler.send_email
+    events:
+      - http:
+          path: send-email
+          method: post
+custom:
+  serverless-offline:
+    port: 3000         
+
