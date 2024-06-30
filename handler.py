@@ -33,8 +33,8 @@ def send_email(event, context):
         ses_client = boto3.client(
             'ses',
             region_name='us-east-1',
-            aws_access_key_id='AKIA5FTZAXSTTKPLPWUT',
-            aws_secret_access_key='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'
+            aws_access_key_id='Access Key',
+            aws_secret_access_key='Secret Code'
         )
 
         # The email sender address must be verified in SES.
